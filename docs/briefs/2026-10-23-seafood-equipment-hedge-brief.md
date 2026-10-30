@@ -1,3 +1,12 @@
+---
+type: brief
+engagement: fx-hedging
+capability: fx-hedging
+date: 2026-10-23
+status: committed
+hypothesis: "I expect the forward hedge to provide the strongest budget certainty because it locks the USD value of the EUR 4.7 million receivable without requiring an upfront option premium."
+---
+# Seafood Equipment FX Hedging Engagement Brief
 Our company has invoiced a Spanish tuna canner for seafood-processing equipment and expects to receive EUR 4,700,000 in 91 days. The euro payment itself is fixed, but the amount we ultimately receive in U.S. dollars is not. If the euro weakens against the dollar before settlement, the same EUR 4.7 million receivable will convert into fewer dollars and could create a meaningful gap in expected cash flow.
 
 The indicative 91-day forward rate is EURUSD 1.1653. At that rate, the receivable would equal approximately $5.48 million. To show the size of the exposure, if the euro were worth about 5% less at settlement, the dollar value of the receivable would fall by roughly $274,000. That potential change is large enough to affect budgeting and makes the currency exposure worth evaluating before the payment arrives.

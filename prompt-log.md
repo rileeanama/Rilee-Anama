@@ -40,3 +40,18 @@ After: I clarified that the call result is included as a separate comparison out
 
 ### Purpose
 This iteration made the specification more precise so the Stage 3 AI build has less room to guess.
+### Specific Iteration
+
+**Before:** My original Section 5 treated the call option too much like another hedge on the receivable and used a formula that did not clearly separate the call payoff from the receivable proceeds.
+
+**AI Review Finding:** The call option treatment was ambiguous and could cause the Stage 3 workbook to build the wrong payoff logic.
+
+**After:** I revised Section 5 so the put remains the main option hedge for the EUR receivable, while the call is shown separately as a comparison. The revised section now uses:
+
+`Call Payoff = FC_AMT × MAX(S_T − K_CALL, 0)`
+
+and
+
+`Call Net Payoff = FC_AMT × MAX(S_T − K_CALL, 0) − FC_AMT × PREM_CALL`
+
+This change makes the model logic clearer and reduces the chance that the Stage 3 build will confuse the call with the company’s primary hedge.

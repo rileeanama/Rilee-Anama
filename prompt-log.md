@@ -24,3 +24,19 @@ Help me understand and complete Stage 1 of my FX hedging project for Scenario 24
 
 ### Purpose
 Used AI to interpret the Stage 1 requirements, organize the executive brief, explain the exposure and hedge alternatives, and help place the files in the correct GitHub folders.
+
+## 2026-11-06
+
+### Prompt
+Review my Stage 2 FX hedging model specification and identify specific gaps or ambiguities that could cause an AI to build the workbook incorrectly.
+
+### AI Review Finding
+The review found that my draft clearly specified the put option payoff but did not define the call option treatment with the same level of precision. The assignment says to specify the call participation payoff, so leaving it vague could cause the Stage 3 workbook to implement the wrong formula.
+
+### Fix
+Before: The draft included a call net proceeds formula without clearly explaining how the call should be used or interpreted in the model.
+
+After: I clarified that the call result is included as a separate comparison output and should not be confused with the main hedge for the EUR receivable. I also kept the put as the primary option hedge because the firm is receiving EUR and needs protection against EUR weakness.
+
+### Purpose
+This iteration made the specification more precise so the Stage 3 AI build has less room to guess.

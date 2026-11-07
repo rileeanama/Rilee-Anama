@@ -175,7 +175,7 @@ Calculate the implied forward rate as:
 
 F_implied = S0_in × (1 + R_USD × T_DAYS / 360) / (1 + R_FC × T_DAYS / 360)
 
-F_implied should be approximately equal to F0_in. If the difference is material, the model should flag the result for review.
+F_implied should be approximately equal to F0_in, allowing for differences caused by placeholder market data and rounding. If the difference is material, the model should flag the result for review.
 
 Put Option Hedge
 
@@ -183,15 +183,23 @@ For each settlement spot rate S_T, calculate net proceeds as:
 
 Put Net Proceeds = FC_AMT × MAX(S_T, K_PUT) − FC_AMT × PREM_PUT
 
-If S_T falls below K_PUT, the put protects the company by creating a floor under the exchange rate. If S_T is above the strike, the company receives the better market rate, less the option premium.
+If S_T falls below K_PUT, the put protects the company by creating a floor under the exchange rate. If S_T is above the strike, the put expires unused and the company receives the better market rate, less the premium paid.
 
 Call Option Participation
 
-For comparison purposes, calculate the call outcome using:
+The call option is included for comparison but is not the primary hedge for the EUR receivable because the company is exposed to a weakening euro.
 
-Call Net Proceeds = FC_AMT × MIN(S_T, K_CALL) − FC_AMT × PREM_CALL
+For each settlement spot rate S_T, calculate the call payoff as:
 
-The workbook should keep the put and call results separate so their payoff structures can be reviewed independently.
+Call Payoff = FC_AMT × MAX(S_T − K_CALL, 0)
+
+Then calculate the net call payoff after the premium:
+
+Call Net Payoff = FC_AMT × MAX(S_T − K_CALL, 0) − FC_AMT × PREM_CALL
+
+If S_T is below K_CALL, the call expires worthless and the premium is lost. If S_T is above K_CALL, the call gains value as the euro strengthens.
+
+The call results should remain separate from the put hedge and the underlying receivable proceeds so the workbook does not confuse the call with the company’s primary downside-protection strategy.
 
 ## 6. Sensitivity Plan
 The workbook will test how each hedge strategy performs across a range of possible EURUSD settlement rates.

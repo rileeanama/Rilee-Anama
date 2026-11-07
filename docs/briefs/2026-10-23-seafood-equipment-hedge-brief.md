@@ -1,9 +1,9 @@
 title: "Seafood Equipment FX Hedging Engagement Brief"
 **To:** CFO  
 **From:** Rilee Anama
+---
 scenario: seafood-equipment
 llm_used: yes
----
 type: brief
 engagement: fx-hedging
 capability: fx-hedging

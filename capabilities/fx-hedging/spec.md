@@ -1,3 +1,24 @@
+University of Hawaiʻi at Mānoa · Shidler College of Business
+
+FIN 321: International Finance and Securities
+
+FX Transaction Hedging Project — Technical Specification
+
+# Seafood Equipment — FX Transaction Hedge Model · Technical Specification
+
+> Technical specification for the FX transaction hedge model — the named-range contract, calculation flow, and validation checks, precise enough that an AI or a colleague could build (or rebuild) the workbook from this document alone. This spec is the input the AI-assisted build works from.
+
+| **Field**               | **Value** |
+|-------------------------|-----------|
+| **Created by**          | Rilee Anama |
+| **Updated by**          | Rilee Anama |
+| **Date Created**        | 2026-11-06 |
+| **Date Updated**        | 2026-11-06 |
+| **Version**             | 1.0 |
+| **Role**                | Treasury Analyst / FP&A Analyst |
+| **Audience**            | CFO / Director of Treasury |
+| **Companion Workbook**  | Student build |
+
 # FX Hedging Model Specification
 
 ## 1. Problem Statement

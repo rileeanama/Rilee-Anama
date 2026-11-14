@@ -55,7 +55,8 @@ USD per EUR
 
 Live EURUSD spot market quote
 
-F0_in
+ F0_in 1.1653 USD per EUR 
+Scenario-provided bank quote; retain `F0_in = 1.1653` throughout the project. If it appears inconsistent with market conditions or covered interest parity, request a requote rather than replacing it independently. |
 
 1.1653
 
@@ -124,7 +125,7 @@ All interest rates will use the ACT/360 convention. The spot rate, forward rate,
 ## 3. Tab Architecture
 The workbook will contain the following tabs:
 
-Cover — Provides the project title, scenario name, company exposure, settlement timing, and a short description of the model.
+Cover - Provides the project title, Scenario 24 (seafood-equipment), EUR 4,700,000 exposure, 91-day settlement period, model purpose, author name (Rilee Anama), and a data-source block identifying scenario-provided inputs and Stage 4 market-data sources.
 
 Legend/Key — Explains the workbook’s formatting, input cells, output cells, named ranges, and any color or label conventions used.
 
@@ -155,7 +156,7 @@ The forward hedge assumes the full receivable can be hedged at F0_in.
 
 The put and call strikes are assumed to be at-the-money, so K_PUT = S0_in and K_CALL = S0_in until live market values are used.
 
-Option premiums are treated as a cost of the hedge and are deducted from proceeds.
+Option premiums are assumed to be paid at inception. Because all hedge strategies are compared at settlement in 91 days, the premium will be carried forward to settlement using R_USD and the ACT/360 convention to reflect its opportunity cost.
 
 Covered interest rate parity is expected to make the forward hedge and money-market hedge produce approximately the same economic result, aside from rounding or market frictions.
 
@@ -196,13 +197,14 @@ Calculate the implied forward rate as:
 
 F_implied = S0_in × (1 + R_USD × T_DAYS / 360) / (1 + R_FC × T_DAYS / 360)
 
-F_implied should be approximately equal to F0_in, allowing for differences caused by placeholder market data and rounding. If the difference is material, the model should flag the result for review.
+F_implied should be approximately equal to F0_in, allowing for differences caused by placeholder market data and rounding. Flag the model for review if ABS(F_implied - F0_in) exceeds 0.0020 USD per EUR.
 
 Put Option Hedge
 
+Put Premium at Settlement = FC_AMT × PREM_PUT × (1 + R_USD × T_DAYS / 360)
 For each settlement spot rate S_T, calculate net proceeds as:
 
-Put Net Proceeds = FC_AMT × MAX(S_T, K_PUT) − FC_AMT × PREM_PUT
+Put Net Proceeds = FC_AMT × MAX(S_T, K_PUT) − Put Premium at Settlement
 
 If S_T falls below K_PUT, the put protects the company by creating a floor under the exchange rate. If S_T is above the strike, the put expires unused and the company receives the better market rate, less the premium paid.
 
@@ -216,7 +218,7 @@ Call Payoff = FC_AMT × MAX(S_T − K_CALL, 0)
 
 Then calculate the net call payoff after the premium:
 
-Call Net Payoff = FC_AMT × MAX(S_T − K_CALL, 0) − FC_AMT × PREM_CALL
+Call Premium at Settlement = FC_AMT × PREM_CALL × (1 + R_USD × T_DAYS / 360)
 
 If S_T is below K_CALL, the call expires worthless and the premium is lost. If S_T is above K_CALL, the call gains value as the euro strengthens.
 
@@ -287,6 +289,9 @@ Error check: No output or sensitivity-table cell may contain #VALUE!, #REF!, #DI
 Named-range check: All ten required named ranges must exist and be used consistently.
 
 Input/output check: Placeholder inputs and calculated outputs must be clearly distinguished so the workbook can be reviewed and updated safely.
+- **Forward check figure:** Forward proceeds must equal **$5,476,910.00** based on the current placeholder inputs. Acceptable tolerance: **±$1** for spreadsheet rounding.
+
+- **Money-market check figure:** Money-market proceeds must equal approximately **$5,482,083.44** based on the current placeholder inputs. Acceptable tolerance: **±$1** for spreadsheet rounding.
 
 ## 8. Outputs
 The workbook will produce the following summary outputs for the CFO:
@@ -312,3 +317,12 @@ Sensitivity Chart — one comparison chart showing how each strategy performs as
 Validation Status — a summary showing whether the model passes the required checks in Section 7.
 
 Summary output cells should be clearly identified as output cells and formatted consistently so the CFO can quickly distinguish inputs, calculations, and final results.
+OUT_FWD_USD
+OUT_MM_USD
+OUT_F_IMPLIED
+OUT_PUT_USD
+OUT_CALL_USD
+OUT_UNHEDGED_USD
+OUT_PARITY_DIFF
+OUT_VALIDATION
+

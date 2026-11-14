@@ -74,3 +74,23 @@ Used AI to help interpret the professor’s review and make the Stage 2 specific
 
 ### Result
 The revised specification gives the Stage 3 builder exact numbers, tolerances, and output names to check against, reducing ambiguity in the workbook build and audit.
+
+## 2026-11-13
+
+### Prompt
+Build and audit Stage 3 of my FX hedging project using the committed Stage 2 specification at `capabilities/fx-hedging/spec.md`. The workbook must include all required tabs, formulas, hedge calculations, sensitivity analysis, validation checks, and the required named ranges.
+
+### Purpose
+Used AI to help generate the workbook structure from the Stage 2 specification and guide the audit process before submission.
+
+### Build and Audit Notes
+- Saved the completed workbook as `capabilities/fx-hedging/model.xlsx`.
+- Added the ten required input named ranges in Excel and confirmed the `#NAME?` errors disappeared.
+- Added the summary output named ranges required by the Stage 2 specification.
+- Tested the sensitivity table by changing `S0_in` from 1.1600 to 1.1700 and confirmed the table recalculated automatically.
+- Confirmed forward proceeds equal $5,476,910.00.
+- Confirmed money-market proceeds equal approximately $5,482,083.44.
+- Documented the audit findings in `analysis/2026-11-13-seafood-equipment-build-audit-analysis.md`.
+
+### Result
+The workbook passed the tested validation checks and the audit note documents the checks performed before submission.

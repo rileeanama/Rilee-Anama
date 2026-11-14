@@ -55,3 +55,22 @@ and
 `Call Net Payoff = FC_AMT × MAX(S_T − K_CALL, 0) − FC_AMT × PREM_CALL`
 
 This change makes the model logic clearer and reduces the chance that the Stage 3 build will confuse the call with the company’s primary hedge.
+
+## 2026-11-13
+
+### Prompt
+Help me revise my Stage 2 FX hedging model specification using my professor’s feedback. I need to fix the treatment of the option premium, add numerical check figures and tolerances to Section 7, define what “material” means for the parity check, keep the given forward rate instead of replacing it in Stage 4, name the Section 8 outputs, and finish the Cover tab description.
+
+### Purpose
+Used AI to help interpret the professor’s review and make the Stage 2 specification more precise and auditable before the Stage 3 workbook build.
+
+### Specific Fixes Made
+- Updated `F0_in` so the scenario-provided bank forward quote of 1.1653 is retained throughout the project unless a requote is requested.
+- Added numerical validation check figures for forward proceeds and money-market proceeds.
+- Added a specific parity tolerance of `0.0020 USD per EUR` instead of using the vague word “material.”
+- Clarified that option premiums are paid at inception and should be carried forward to settlement using `R_USD` and ACT/360 when comparing day-91 proceeds.
+- Added exact named ranges for summary outputs in Section 8.
+- Added the author and data-source block requirements to the Cover tab description.
+
+### Result
+The revised specification gives the Stage 3 builder exact numbers, tolerances, and output names to check against, reducing ambiguity in the workbook build and audit.

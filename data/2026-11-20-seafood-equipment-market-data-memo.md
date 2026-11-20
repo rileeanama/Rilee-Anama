@@ -7,7 +7,7 @@ This memo documents the live market inputs used to replace the Stage 3 placehold
 
 | Input | Value Used | Source | Retrieval Date / Timestamp | Proxy / Computation Notes |
 |---|---:|---|---|---|
-| `S0_in` | 1.0990 USD/EUR | European Central Bank (ECB) euro reference exchange rate | 2026-11-20, ECB daily reference rate | ECB publishes currencies against the euro; EUR 1 = USD 1.0990. Used directly as the live EURUSD spot rate. |
+| `S0_in` | 1.0990 USD/EUR | European Central Bank (ECB) euro reference exchange rate | 2026-11-20, retrieved approximately 12:10 PM HST ECB daily reference rate | ECB publishes currencies against the euro; EUR 1 = USD 1.0990. Used directly as the live EURUSD spot rate. |
 | `R_USD` | 4.62% | Federal Reserve H.15, 1-Year Treasury Constant Maturity Rate | 2026-11-20 release; latest available market date 2026-11-19 | Used the 1-year U.S. Treasury constant maturity yield as the USD 1-year government-rate proxy because it matches the project’s 1-year rate guidance. |
 | `R_FC` | 2.995% | Germany 1-Year Government Bond Yield | 2026-11-20 | Used the German 1-year government bond yield as the euro-area 1-year government-rate proxy because Germany is a major euro-area sovereign benchmark and the maturity matches the project’s 1-year rate guidance. |
 | `F0_in` | 1.1653 USD/EUR | Scenario-provided bank forward quote | Original scenario quote; retained for Phase 4 | This is the bank’s quoted forward rate and is not replaced with a self-computed rate. The CIP-implied forward is calculated separately only as a cross-check. |

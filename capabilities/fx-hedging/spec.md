@@ -62,7 +62,7 @@ Scenario-provided bank quote; retain `F0_in = 1.1653` throughout the project. If
 
 USD per EUR
 
-Scenario indicative 91-day forward; verify or replace with live forward data at Stage 4
+Scenario indicative 91-day forward; F0_in is the scenario-provided bank forward quote and should remain unchanged at Stage 4. If a new forward quote is needed, request a requote rather than replacing it with independently sourced live data.
 
 R_USD
 

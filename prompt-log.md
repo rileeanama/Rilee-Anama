@@ -94,3 +94,23 @@ Used AI to help generate the workbook structure from the Stage 2 specification a
 
 ### Result
 The workbook passed the tested validation checks and the audit note documents the checks performed before submission.
+
+## 2026-11-20
+
+### Prompt
+Review the Stage 3 grader feedback and correct the FX hedging workbook, audit note, and specification before beginning Stage 4.
+
+### Purpose
+Used AI to help interpret the grader feedback, identify the specific Stage 3 defects, and guide the corrections one at a time.
+
+### Corrections Made
+- Corrected the defined name `F0_in` so it refers to `=Inputs!$B$7`.
+- Confirmed the forward hedge now calculates $5,476,910.00.
+- Replaced the hard-coded forward validation check with a formula-driven check using the workbook inputs.
+- Updated the MM vs. Forward validation threshold to $9,400 based on the Stage 2 parity threshold.
+- Applied Blue formatting to the USD and EUR interest-rate assumption cells to match the Legend/Key.
+- Revised the Stage 3 audit note to document the actual defects found, the corrections made, the named-range review, and the formulas-only review.
+- Updated `spec.md` to clarify that the scenario-provided bank forward quote remains `F0_in` at Stage 4 unless a requote is requested.
+
+### Result
+The Stage 3 workbook and documentation were corrected to address the grader feedback before continuing to Stage 4.

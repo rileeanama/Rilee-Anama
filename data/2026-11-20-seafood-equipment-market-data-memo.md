@@ -72,11 +72,36 @@ I replaced the hard-coded check figure with a formula-driven validation that rec
 
 I entered the same Phase 4 inputs into the FX Hedging Lab and compared its outputs with the workbook.
 
-The workbook and lab should be compared for:
+Forward hedge:
 
-- Forward hedge proceeds
-- Money-market hedge proceeds
-- Put option proceeds
-- Call option payoff/proceeds
+Lab: $5,476,910
 
-Any differences must be investigated before submission rather than ignored or forced to match.
+Workbook: $5,476,910.00
+
+Result: Match
+
+Money-market hedge:
+
+Lab: $5,186,358
+
+Workbook: $5,186,357.77
+
+Result: Match after rounding
+
+CIP-implied forward:
+
+Lab: 1.1035 USD/EUR
+
+Workbook: 1.103480 USD/EUR
+
+Result: Match after rounding
+
+Parity gap:
+
+Lab: −$290,552
+
+Workbook: approximately −$290,552.23
+
+Result: Match after rounding
+
+The FX Hedging Lab and the workbook therefore agree on the forward hedge, money-market hedge, CIP-implied forward, and parity gap. The large parity gap was not removed or forced to pass; it was retained and documented because F0_in remains the bank’s quoted forward rate.

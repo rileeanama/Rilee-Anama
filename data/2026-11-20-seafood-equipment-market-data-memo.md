@@ -70,38 +70,26 @@ I replaced the hard-coded check figure with a formula-driven validation that rec
 
 ## FX Hedging Lab Cross-Check
 
-I entered the same Phase 4 inputs into the FX Hedging Lab and compared its outputs with the workbook.
+I entered the same Phase 4 live inputs into the FX Hedging Lab and compared the outputs with the workbook.
 
-Forward hedge:
+- Forward hedge:
+  - Lab: **$5,476,910**
+  - Workbook: **$5,476,910.00**
+  - Result: **Match**
 
-Lab: $5,476,910
+- Money-market hedge:
+  - Lab: **$5,186,358**
+  - Workbook: **$5,186,357.77**
+  - Result: **Match after rounding**
 
-Workbook: $5,476,910.00
+- CIP-implied forward:
+  - Lab: **1.1035 USD/EUR**
+  - Workbook: **1.103480 USD/EUR**
+  - Result: **Match after rounding**
 
-Result: Match
+- Parity gap:
+  - Lab: **−$290,552**
+  - Workbook: **approximately −$290,552.23**
+  - Result: **Match after rounding**
 
-Money-market hedge:
-
-Lab: $5,186,358
-
-Workbook: $5,186,357.77
-
-Result: Match after rounding
-
-CIP-implied forward:
-
-Lab: 1.1035 USD/EUR
-
-Workbook: 1.103480 USD/EUR
-
-Result: Match after rounding
-
-Parity gap:
-
-Lab: −$290,552
-
-Workbook: approximately −$290,552.23
-
-Result: Match after rounding
-
-The FX Hedging Lab and the workbook therefore agree on the forward hedge, money-market hedge, CIP-implied forward, and parity gap. The large parity gap was not removed or forced to pass; it was retained and documented because F0_in remains the bank’s quoted forward rate.
+The FX Hedging Lab and the workbook therefore agree on the forward hedge, money-market hedge, CIP-implied forward, and parity gap. The large parity gap was not removed or forced to pass; it was retained and documented because `F0_in` remains the bank’s quoted forward rate.

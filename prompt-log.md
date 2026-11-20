@@ -114,3 +114,27 @@ Used AI to help interpret the grader feedback, identify the specific Stage 3 def
 
 ### Result
 The Stage 3 workbook and documentation were corrected to address the grader feedback before continuing to Stage 4.
+
+## 2026-11-20
+
+### Prompt
+Use the Stage 4 FX hedging instructions to replace the workbook placeholders with live market data, document the provenance of each input, compute the CIP-implied forward, re-run the workbook checks, and cross-check the model against the FX Hedging Lab.
+
+### Purpose
+Used AI to help identify appropriate live market sources, enter the Phase 4 inputs step by step, verify the workbook outputs, document the market-data provenance, and compare the workbook with the course FX Hedging Lab.
+
+### Live Data and Model Updates
+- Updated `S0_in` to 1.0990 USD/EUR using the ECB reference rate.
+- Updated `R_USD` to 4.62% using the Federal Reserve H.15 1-year Treasury constant maturity rate.
+- Updated `R_FC` to 2.995% using the Germany 1-year government bond yield as the euro-area proxy.
+- Kept the scenario bank forward quote `F0_in = 1.1653`.
+- Updated `K_PUT` and `K_CALL` to the live spot rate of 1.0990.
+- Retained the scenario option premiums of 0.0147 and 0.0199.
+- Confirmed the CIP-implied forward of approximately 1.103480 USD/EUR.
+- Documented the parity difference of approximately −0.061820 USD/EUR, or about −$290,552 on the €4.7 million receivable.
+- Fixed the money-market validation check so it recomputes from the current live inputs rather than comparing against the Stage 3 placeholder check figure.
+- Confirmed the sensitivity table and chart recalculated around the live spot rate.
+- Cross-checked the workbook against the FX Hedging Lab and confirmed the forward hedge, money-market hedge, CIP-implied forward, and parity gap matched after rounding.
+
+### Result
+The Phase 4 workbook was populated with live market inputs, the market-data memo was completed in the `data` folder, the validation issue exposed by the live data was corrected, and the workbook matched the FX Hedging Lab cross-check.

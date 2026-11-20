@@ -10,13 +10,13 @@ This memo documents the live market inputs used to replace the Stage 3 placehold
 | `S0_in` | 1.0990 USD/EUR | European Central Bank (ECB) euro reference exchange rate | 2026-11-20, retrieved approximately 12:10 PM HST; ECB daily reference rate | ECB publishes currencies against the euro; EUR 1 = USD 1.0990. Used directly as the live EURUSD spot rate. |
 | `R_USD` | 4.62% | Federal Reserve H.15, 1-Year Treasury Constant Maturity Rate | 2026-11-20, retrieved approximately 12:12 PM HST; H.15 release dated 2026-11-20, underlying market date 2026-11-19 | Used the 1-year U.S. Treasury constant maturity yield as the USD 1-year government-rate proxy because it matches the project’s 1-year rate guidance. |
 | `R_FC` | 2.995% | Germany 1-Year Government Bond Yield | 2026-11-20, retrieved approximately 12:14 PM HST; Germany 1-year government bond yield | Used the German 1-year government bond yield as the euro-area 1-year government-rate proxy because Germany is a major euro-area sovereign benchmark and the maturity matches the project’s 1-year rate guidance. |
-| `F0_in` | 1.1653 USD/EUR | Scenario-provided bank forward quote | Original scenario quote; retained for Phase 4 | This is the bank’s quoted forward rate and is not replaced with a self-computed rate. The CIP-implied forward is calculated separately only as a cross-check. |
-| `K_PUT` | 1.0990 USD/EUR | Set at live spot per scenario convention | 2026-11-20 | Strike updated to the live EURUSD spot rate used for `S0_in`. |
-| `K_CALL` | 1.0990 USD/EUR | Set at live spot per scenario convention | 2026-11-20 | Strike updated to the live EURUSD spot rate used for `S0_in`. |
-| `PREM_PUT` | 0.0147 USD/EUR | Scenario-provided option premium | Original scenario input; retained for Phase 4 | Scenario-given premium retained because retail-accessible option quotes are not reliable enough for this project. |
-| `PREM_CALL` | 0.0199 USD/EUR | Scenario-provided option premium | Original scenario input; retained for Phase 4 | Scenario-given premium retained because retail-accessible option quotes are not reliable enough for this project. |
-| `FC_AMT` | 4,700,000 EUR | Scenario-provided receivable amount | Original scenario input; retained for Phase 4 | Fixed scenario exposure; not a market-data input. |
-| `T_DAYS` | 91 days | Scenario-provided settlement horizon | Original scenario input; retained for Phase 4 | Fixed scenario settlement period used in the ACT/360 calculations. |
+| `F0_in` | 1.1653 USD/EUR | Scenario-provided bank forward quote | 2026-11-20, accessed approximately 12:17 PM HST; Scenario 24 bank forward quote | This is the bank’s quoted forward rate and is not replaced with a self-computed rate. The CIP-implied forward is calculated separately only as a cross-check. |
+| `K_PUT` | 1.0990 USD/EUR | Set at live spot per scenario convention | 2026-11-20, set approximately 12:16 PM HST; derived from live S0_in | Strike updated to the live EURUSD spot rate used for `S0_in`. |
+| `K_CALL` | 1.0990 USD/EUR | Set at live spot per scenario convention | 2026-11-20, set approximately 12:16 PM HST; derived from live S0_in | Strike updated to the live EURUSD spot rate used for `S0_in`. |
+| `PREM_PUT` | 0.0147 USD/EUR | Scenario-provided option premium | 2026-11-20, accessed approximately 12:17 PM HST; Scenario 24 option premium | Scenario-given premium retained because retail-accessible option quotes are not reliable enough for this project. |
+| `PREM_CALL` | 0.0199 USD/EUR | Scenario-provided option premium | 2026-11-20, accessed approximately 12:17 PM HST; Scenario 24 option premium | Scenario-given premium retained because retail-accessible option quotes are not reliable enough for this project. |
+| `FC_AMT` | 4,700,000 EUR | Scenario-provided receivable amount | 2026-11-20, accessed approximately 12:17 PM HST; Scenario 24 receivable amount | Fixed scenario exposure; not a market-data input. |
+| `T_DAYS` | 91 days | Scenario-provided settlement horizon | 2026-11-20, accessed approximately 12:17 PM HST; Scenario 24 settlement horizon| Fixed scenario settlement period used in the ACT/360 calculations. |
 
 ## CIP-Implied Forward Cross-Check
 

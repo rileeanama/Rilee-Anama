@@ -138,3 +138,22 @@ Used AI to help identify appropriate live market sources, enter the Phase 4 inpu
 
 ### Result
 The Phase 4 workbook was populated with live market inputs, the market-data memo was completed in the `data` folder, the validation issue exposed by the live data was corrected, and the workbook matched the FX Hedging Lab cross-check.
+
+## 2026-11-27
+
+### Prompt
+Using only the Stage 2 technical specification and the Stage 4 market-data memo, independently compute the complete FX hedge analysis and recommend a strategy. Do not use the workbook or prior project results. State any assumptions or ambiguities.
+
+### Purpose
+Used a fresh LLM session as an independent production test of the specification and market-data memo, then compared its results with the workbook and manually recomputed key outcomes.
+
+### Validation and Decision Work
+- Saved the raw independent LLM output in `analysis/2026-11-27-seafood-equipment-independent-llm-output.md`.
+- Compared the LLM and workbook results for the forward, money-market, put, call, and unhedged strategies across multiple settlement-rate scenarios.
+- Hand-verified forward proceeds, all three money-market steps, and a put option outcome.
+- Documented the parity difference between the bank quote and CIP-implied forward.
+- Completed a spec retrospective identifying areas that could be clearer in a future version.
+- Prepared the CFO decision memo recommending the forward hedge, subject to confirmation of the bank quote.
+
+### Result
+The independent LLM results reconciled with the workbook, the required hand checks matched, and the final recommendation was supported by the live-data model.

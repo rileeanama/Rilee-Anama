@@ -7,4 +7,15 @@ This portfolio is a place for me to share some of the work I have completed and 
 
 ## Engagements
 
-Projects and engagements will be added here throughout the term.
+### FX Hedging Project — Seafood Equipment
+
+This project analyzes a €4.7 million EUR receivable and evaluates forward, money-market, option, and unhedged strategies using live market data.
+
+- [Stage 1 — Executive Brief](docs/briefs/2026-10-23-seafood-equipment-hedge-brief.md)
+- [Stage 2 — Technical Specification](capabilities/fx-hedging/spec.md)
+- [Stage 3 — FX Hedging Model](capabilities/fx-hedging/model.xlsx)
+- [Stage 3 — Build Audit](analysis/2026-11-13-seafood-equipment-build-audit-analysis.md)
+- [Stage 4 — Market Data Memo](data/2026-11-20-seafood-equipment-market-data-memo.md)
+- [Stage 5 — Independent LLM Output](analysis/2026-11-27-seafood-equipment-independent-llm-output.md)
+- [Stage 5 — Validation Analysis](analysis/2026-11-27-seafood-equipment-validation-analysis.md)
+- [Stage 5 — Hedge Decision Memo](docs/decisions/2026-11-27-seafood-equipment-hedge-decision-memo.md)
